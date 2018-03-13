@@ -5,7 +5,6 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   $('#before-signinauth-message').text('Sign-Up Successful!')
   $('#before-signinauth-message').css('background-color', 'green')
-  console.log(data)
 }
 
 const signUpFailure = function (error) {
@@ -18,6 +17,7 @@ const signInSuccess = function (data) {
   $('#after-signinauth-message').text('Sign-In Successful!')
   $('#after-signinauth-message').css('background-color', 'green')
   store.user = data.user
+  $('#before-signinauth-message').empty()
 }
 
 const signInFailure = function (error) {
@@ -42,6 +42,13 @@ const changePasswordFailure = function (error) {
 const signOutSuccess = function () {
   $('#before-signinauth-message').text('Successfully Signed Out')
   $('#before-signinauth-message').css('background-color', 'green')
+  $('.downtime-content').empty()
+  $('.alldowntime-content').empty()
+  $('#after-signinauth-message').empty()
+  $('#create-message').empty()
+  $('#get-message').empty()
+  $('#update-message').empty()
+  $('#delete-message').empty()
 }
 
 const signOutFailure = function (error) {
