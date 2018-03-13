@@ -9,7 +9,7 @@ const onSignUp = function (event) {
   const data = getFormFields(this)
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .then($('#user-signup input[type="text"]').val(''))
+    .then($('#user-signup input[type="email"]').val(''))
     .then($('#user-signup input[type="password"]').val(''))
     .catch(ui.signUpFailure)
 }
@@ -19,13 +19,11 @@ const onSignIn = function (event) {
   const data = getFormFields(this)
   api.signIn(data)
     .then(ui.signInSuccess)
-    .then($('#user-signin input[type="text"]').val(''))
+    .then($('#user-signin input[type="email"]').val(''))
     .then($('#user-signin input[type="password"]').val(''))
     .then($('#before-signinauth').hide())
     .then($('#after-signinauth').show())
     .catch(ui.signInFailure)
-    // .catch($('#after-signinauth').hide())
-    // .catch($('#before-signinauth').show())
 }
 
 const onChangePassword = function (event) {

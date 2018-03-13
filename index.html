@@ -32,7 +32,7 @@
           <fieldset>
             <legend>Sign Up</legend>
               <label>Email</label>
-              <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+              <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
               <label>Password</label>
               <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
               <label>Confirm Password</label>
@@ -49,7 +49,7 @@
           <fieldset>
             <legend>Sign In</legend>
               <label>Email</label>
-              <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+              <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
               <label>Password</label>
               <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
               <label>Sign In</label>
@@ -93,9 +93,9 @@
           <fieldset>
             <legend>Log Downtime</legend>
               <label>What Date Did You Have Downtime On?</label>
-              <input type="text" class="form-control" name="downtime_instance[date]" placeholder="Date" required>
+              <input type="date" class="form-control" name="downtime_instance[date]" placeholder="Date" required>
               <label>How Long Were You Away From Your Devices?</label>
-              <input type="text" class="form-control" name="downtime_instance[time]" placeholder="Time" required>
+              <input type="time" class="form-control" name="downtime_instance[time]" placeholder="Time" required>
               <label>What Were You Doing?</label>
               <input type="text" class="form-control" name="downtime_instance[activity]" placeholder="Activity" required>
               <label>Log Downtime</label>
@@ -120,6 +120,7 @@
         </form>
       </div>
       <div class="sign-after">
+        <p id="getall-message"></p>
         <form id="get-alldowntime">
           <div class="form-group">
           <fieldset>
@@ -139,9 +140,9 @@
               <label>Choose Your Downtime Instance</label>
               <input type="text" class="form-control" name="downtime_instance[id]" placeholder="Instance ID" required>
               <label>Update Date</label>
-              <input type="text" class="form-control" name="downtime_instance[date]" placeholder="Date" required>
+              <input type="date" class="form-control" name="downtime_instance[date]" placeholder="Date" required>
               <label>Update Time</label>
-              <input type="text" class="form-control" name="downtime_instance[time]" placeholder="Time" required>
+              <input type="time" class="form-control" name="downtime_instance[time]" placeholder="Time" required>
               <label>Update Activity</label>
               <input type="text" class="form-control" name="downtime_instance[activity]" placeholder="Activity" required>
               <input type="submit" class="form-control" value="Update My Downtime">

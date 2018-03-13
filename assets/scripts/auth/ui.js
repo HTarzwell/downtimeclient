@@ -49,6 +49,15 @@ const signOutSuccess = function () {
   $('#get-message').empty()
   $('#update-message').empty()
   $('#delete-message').empty()
+  $('#user-changepwd input[type="password"]').val('')
+  $('#create-downtime input[type="date"]').val('')
+  $('#create-downtime input[type="time"]').val('')
+  $('#create-downtime input[type="text"]').val('')
+  $('#get-downtime input[type="text"]').val('')
+  $('#update-downtime input[type="date"]').val('')
+  $('#update-downtime input[type="time"]').val('')
+  $('#update-downtime input[type="text"]').val('')
+  $('#delete-downtime input[type="text"]').val('')
 }
 
 const signOutFailure = function (error) {
