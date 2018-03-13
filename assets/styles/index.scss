@@ -1,6 +1,91 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$dark-vanilla: #cdc6ae;
+$laurel-green: #a3b4a2;
+$deep-space-sparkle: #38686a;
+$metallic-seaweed: #187795;
+$carolina-blue: #60a9cf;
 
+html,
 body {
+  background-color: $laurel-green;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('./img/myfadedforest.jpg');
+  background-size: cover;
+}
+
+.title {
+  background-color: $dark-vanilla;
+  padding: 10px;
+  margin: 20px;
+}
+
+h1 {
+  color: $metallic-seaweed;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.blurb {
+  color: $dark-vanilla;
+  background-color: $deep-space-sparkle;
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+}
+
+form {
+  color: $deep-space-sparkle;
   width: 80%;
+  padding: 10px;
+}
+
+legend {
+  color: $metallic-seaweed;
+  font-size: 48px;
+}
+
+.before-signinauth {
+  display: flex;
+}
+
+.sign-before {
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.after-signinauth {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.time {
+  color: $carolina-blue;
+}
+
+.sign-after {
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+footer {
+  width: 100%;
+  padding: 10px;
+  color: $dark-vanilla;
+  background-color: $deep-space-sparkle;
+  text-align: right;
 }
