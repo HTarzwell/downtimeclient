@@ -47,6 +47,7 @@ const signOutSuccess = function () {
   $('#after-signinauth-message').empty()
   $('#create-message').empty()
   $('#get-message').empty()
+  $('#getall-message').empty()
   $('#update-message').empty()
   $('#delete-message').empty()
   $('#user-changepwd input[type="password"]').val('')
