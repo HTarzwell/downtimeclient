@@ -141,3 +141,11 @@ problems with Heroku on my own, astoundingly!
 
 A SNOW DAY granted us an extra day to work; I spent it making the app as pretty
 as I could and attempting to reconcile myself with Bootstrap.
+
+### Wireframes, User Stories, ERD
+
+![Wireframes](https://github.com/HTarzwell/downtimeclient/blob/master/assets/styles/production/IMG_0315.JPG)
+
+![User Stories](https://github.com/HTarzwell/downtimeclient/blob/master/assets/styles/production/IMG_0316.JPG)
+
+![ERD](https://github.com/HTarzwell/downtimeclient/blob/master/assets/styles/production/IMG_0317.JPG)
