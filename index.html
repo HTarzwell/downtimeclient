@@ -4,113 +4,168 @@
       <title>downTime App</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Concert+One|Montserrat" rel="stylesheet">
 
-      <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-    <div id="before-signinauth">
-      <div>
+    <div id="header" class="header">
+      <div class="title">
+        <h1>down<span class="time">Time</span></h1>
+      </div>
+      <div class="blurb">
+        <h2>Take a break, put down your phone...</h2>
+        <p>When was the last time you were away from your phone, computer, and TV, all at once?  Do you ever take note of the times when you're not glued to the screen of one of your devices?  Let downTime remind you that you have a life beyond your screen time...</p>
+        <h3>How does downTime work?</h3>
+        <p>It's easy, just sign up for an account and start tracking all the time you don't spend using your devices!</p>
+        <h3>Are you aware of the irony of using an app to encourage people to use their devices less?</h3>
+        <p>Buddy, you obviously need to spend more time outdoors.</p>
+      </div>
+    </div>
+    <div id="before-signinauth" class="before-signinauth">
+      <div class="sign-before">
         <p id="before-signinauth-message"></p>
         <form id="user-signup">
+          <div class="form-group">
           <fieldset>
             <legend>Sign Up</legend>
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-              <input type="submit" value="Sign Up">
+              <label>Email</label>
+              <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+              <label>Password</label>
+              <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+              <label>Confirm Password</label>
+              <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <label>Sign Up</label>
+              <input type="submit" class="form-control" value="Sign Up">
           </fieldset>
+          </div>
         </form>
       </div>
-      <div>
+      <div class="sign-before">
         <form id="user-signin">
+          <div class="form-group">
           <fieldset>
             <legend>Sign In</legend>
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="submit" value="Sign In">
+              <label>Email</label>
+              <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+              <label>Password</label>
+              <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+              <label>Sign In</label>
+              <input type="submit" class="form-control" value="Sign In">
           </fieldset>
+          </div>
         </form>
       </div>
     </div>
-    <div id="after-signinauth">
-      <div>
+    <div id="after-signinauth" class="after-signinauth">
+      <div class="sign-after">
         <p id="after-signinauth-message"></p>
         <form id="user-changepwd">
+          <div class="form-group">
           <fieldset>
             <legend>Change Password</legend>
-              <input type="password" name="passwords[old]" placeholder="Old Password">
-              <input type="password" name="passwords[new]" placeholder="New Password">
-              <input type="submit" value="Change Password">
+              <label>Old Password</label>
+              <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
+              <label>New Password</label>
+              <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+              <label>Change Password</label>
+              <input type="submit" class="form-control" value="Change Password">
           </fieldset>
+          </div>
         </form>
       </div>
-      <div>
+      <div class="sign-after">
         <form id="user-signout">
+          <div class="form-group">
           <fieldset>
             <legend>Sign Out</legend>
-              <input type="submit" value="Sign Out">
+              <input type="submit" class="form-control" value="Sign Out">
           </fieldset>
+          </div>
         </form>
       </div>
-      <div>
+      <div class="sign-after">
         <p id="create-message"></p>
         <form id="create-downtime">
+          <div class="form-group">
           <fieldset>
             <legend>Log Downtime</legend>
-              <input type="text" name="downtime_instance[date]" placeholder="Date" required>
-              <input type="text" name="downtime_instance[time]" placeholder="Time" required>
-              <input type="text" name="downtime_instance[activity]" placeholder="Activity" required>
-              <input type="submit" value="Log My Downtime">
+              <label>What Date Did You Have Downtime On?</label>
+              <input type="text" class="form-control" name="downtime_instance[date]" placeholder="Date" required>
+              <label>How Long Were You Away From Your Devices?</label>
+              <input type="text" class="form-control" name="downtime_instance[time]" placeholder="Time" required>
+              <label>What Were You Doing?</label>
+              <input type="text" class="form-control" name="downtime_instance[activity]" placeholder="Activity" required>
+              <label>Log Downtime</label>
+              <input type="submit" class="form-control" value="Log My Downtime">
           </fieldset>
+          </div>
         </form>
       </div>
-      <div>
+      <div class="sign-after">
         <p id="get-message"></p>
         <form id="get-downtime">
+          <div class="form-group">
           <fieldset>
             <legend>Get My Downtime</legend>
-              <input type="text" name="downtime_instance[id]" placeholder="Instance ID" required>
-              <input type="submit" value="Get Downtime">
+              <label>Find Using ID</label>
+              <input type="text" class="form-control" name="downtime_instance[id]" placeholder="Instance ID" required>
+              <label>Get Me This Downtime</label>
+              <input type="submit" class="form-control" value="Get Downtime">
               <div id="downtime-content" class="downtime-content"></div>
           </fieldset>
+          </div>
         </form>
       </div>
-      <div>
+      <div class="sign-after">
         <form id="get-alldowntime">
+          <div class="form-group">
           <fieldset>
             <legend>Get ALL My Downtimes</legend>
-              <input type="submit" value="Get All Downtimes">
+              <input type="submit" class="form-control" value="Get All Downtimes">
               <div id="alldowntime-content" class="alldowntime-content"></div>
           </fieldset>
+          </div>
         </form>
       </div>
-      <div>
+      <div class="sign-after">
         <p id="update-message"></p>
         <form id="update-downtime">
+          <div class="form-group">
           <fieldset>
             <legend>Update Downtime</legend>
-              <input type="text" name="downtime_instance[id]" placeholder="Instance ID" required>
-              <input type="text" name="downtime_instance[date]" placeholder="Date" required>
-              <input type="text" name="downtime_instance[time]" placeholder="Time" required>
-              <input type="text" name="downtime_instance[activity]" placeholder="Activity" required>
-              <input type="submit" value="Update My Downtime">
+              <label>Choose Your Downtime Instance</label>
+              <input type="text" class="form-control" name="downtime_instance[id]" placeholder="Instance ID" required>
+              <label>Update Date</label>
+              <input type="text" class="form-control" name="downtime_instance[date]" placeholder="Date" required>
+              <label>Update Time</label>
+              <input type="text" class="form-control" name="downtime_instance[time]" placeholder="Time" required>
+              <label>Update Activity</label>
+              <input type="text" class="form-control" name="downtime_instance[activity]" placeholder="Activity" required>
+              <input type="submit" class="form-control" value="Update My Downtime">
           </fieldset>
+          </div>
         </form>
       </div>
-      <div>
+      <div class="sign-after">
         <p id="delete-message"></p>
         <form id="delete-downtime">
+          <div class="form-group">
           <fieldset>
             <legend>Delete Downtime Occurance</legend>
-              <input type="text" name="downtime_instance[id]" placeholder="Instance ID" required>
-              <input type="submit" value="Delete">
+              <label>Choose Your Downtime Instance</label>
+              <input type="text" class="form-control" name="downtime_instance[id]" placeholder="Instance ID" required>
+              <label>Delete This Instance</label>
+              <input type="submit" class="form-control" value="Delete">
           </fieldset>
+          </div>
         </form>
       </div>
     </div>
+    <footer>
+      <p>&copy; 2018 Leni Tarzwell</p>
+    </footer>
     </body>
 </html>
