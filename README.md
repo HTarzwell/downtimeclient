@@ -140,7 +140,19 @@ problems with Heroku on my own, astoundingly!
 ## Day...Seven??
 
 A SNOW DAY granted us an extra day to work; I spent it making the app as pretty
-as I could and attempting to reconcile myself with Bootstrap.
+as I could and attempting to reconcile myself with Bootstrap. Deployed, got lots
+of wonderful suggestions, fixed as many user-facing bugs as I humanly could,
+and finally deployed again.  Working app works relatively well!!
+
+# Outstanding Issues to be Fixed Next Time Around
+
+1. User time clock and time entry column will take data in a reasonable fashion,
+but I'm very unhappy with it and I would MUCH prefer to have a nice, neat thing
+for time entry (and I don't like making them enter a date range twice!), so for
+future iterations I would like to add a couple of other lovely parameters.
+2. Downtime activities table!!
+3. User interface is currently clunky, ugly, and distinctly un-intuitive.  Would
+like to make it prettier!
 
 ### Wireframes, User Stories, ERD
 
