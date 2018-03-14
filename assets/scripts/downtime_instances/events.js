@@ -10,7 +10,7 @@ const onCreateDowntime = function (event) {
   api.createDowntime(data)
     .then(ui.createDowntimeSuccess)
     .then($('#create-downtime input[type="date"]').val(''))
-    .then($('#create-downtime input[type="time"]').val(''))
+    .then($('#create-downtime input[type="datetime-local"]').val(''))
     .then($('#create-downtime input[type="text"]').val(''))
     .catch(ui.createDowntimeFailure)
 }
@@ -37,7 +37,7 @@ const onUpdateDowntime = function (event) {
   api.updateDowntime(data)
     .then(ui.updateDowntimeSuccess)
     .then($('#update-downtime input[type="date"]').val(''))
-    .then($('#update-downtime input[type="time"]').val(''))
+    .then($('#update-downtime input[type="datetime-local"]').val(''))
     .then($('#update-downtime input[type="text"]').val(''))
     .catch(ui.updateDowntimeFailure)
 }
