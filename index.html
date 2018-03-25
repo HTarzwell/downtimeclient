@@ -97,7 +97,7 @@
               <label>What Time Were You Away From Your Devices?</label>
               <input type="datetime-local" class="form-control" name="downtime_instance[time]" placeholder="YYYY-MM-DD hh:mm:ss" required>
               <label>What Were You Doing?</label>
-              <select class="form-control" name="downtime_instance[activity]" title="Choose An Activity...">
+              <select id="logdowntimeselect" class="form-control" name="downtime_instance[activity]" title="Choose An Activity...">
                 <option>Resting/Sleeping</option>
                 <option>Family Time</option>
                 <option>Pet Time</option>
@@ -154,7 +154,7 @@
               <label>Update Date-Time</label>
               <input type="datetime-local" class="form-control" name="downtime_instance[time]" placeholder="YYYY-MM-DD hh:mm:ss" required>
               <label>Update Activity</label>
-              <select class="form-control" name="downtime_instance[activity]">
+              <select id="updatedowntimeselect" class="form-control" name="downtime_instance[activity]">
                 <option>Resting/Sleeping</option>
                 <option>Family Time</option>
                 <option>Pet Time</option>

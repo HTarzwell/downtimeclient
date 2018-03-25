@@ -18,8 +18,8 @@ $(() => {
   authEvents.addHandlers()
   downTimeEvents.addHandlers()
   // $('#after-signinauth').hide()
-  $('#other-input').hide()
-  /* $('#other').(
-    $('#other-input').show()
-  ) */
+  $('.other-input').hide()
+  $('select').change(function () {
+    $('.other-input').show()
+  })
 })
