@@ -1,3 +1,4 @@
+
 {{#each downtime_instances as |downtime_instance|}}
 
 <div data-id="{{downtime_instance.id}}">
@@ -23,13 +24,11 @@
       No activity recorded.  We assume you were fighting aliens.
     {{/if}}
   </p>
-  <p>
     {{#if downtime_instance.duration}}
-      Duration (Minutes): {{downtime_instance.duration}}
+      <p>Duration (Minutes): {{downtime_instance.duration}}</p>
     {{else}}
-      No duration recorded.  You should update this.
+      <p>No duration recorded.  You should update this.</p>
     {{/if}}
-  </p>
 </div>
 
 {{/each}}

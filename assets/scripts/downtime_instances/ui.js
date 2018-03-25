@@ -3,7 +3,6 @@
 const store = require('../store')
 const showInstanceTemplate = require('../templates/downtime_instance-listing.handlebars')
 const showInstanceAllTemplate = require('../templates/downtime_instance-all.handlebars')
-const showDurationAllTemplate = require('../templates/duration-total-downtime.handlebars')
 
 const createDowntimeSuccess = function (data) {
   $('#create-message').text('Created New Downtime!')
@@ -36,9 +35,17 @@ const getAllDowntimeSuccess = function (data) {
   $('#getall-message').text('All Downtime Instances Received')
   $('#getall-message').css('background-color', '#60a9cf')
   const showInstanceAllHtml = showInstanceAllTemplate({ downtime_instances: data.downtime_instances })
+  console.log('Data downtime instance duration 17 in UI is ', data.downtime_instances[17].duration)
   $('.alldowntime-content').html(showInstanceAllHtml)
-  const showDurationAllHtml = showDurationAllTemplate({ downtime_instances: data.downtime_instances })
-  $('.duration-totals').html(showDurationAllHtml)
+  $('.duration-totals').html(function () {
+    let total = 0
+    for (let i = 0; i <= data.downtime_instances.length; i++) {
+      if (data.downtime_instance[i].duration !== null) {
+        total += data.downtime_instance[i].duration
+      }
+    }
+    return total
+  })
 }
 
 const getAllDowntimeFailure = function (error) {
