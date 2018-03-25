@@ -3,6 +3,7 @@
 const store = require('../store')
 const showInstanceTemplate = require('../templates/downtime_instance-listing.handlebars')
 const showInstanceAllTemplate = require('../templates/downtime_instance-all.handlebars')
+const showDurationAllTemplate = require('../templates/duration-total-downtime.handlebars')
 
 const createDowntimeSuccess = function (data) {
   $('#create-message').text('Created New Downtime!')
@@ -36,10 +37,12 @@ const getAllDowntimeSuccess = function (data) {
   $('#getall-message').css('background-color', '#60a9cf')
   const showInstanceAllHtml = showInstanceAllTemplate({ downtime_instances: data.downtime_instances })
   $('.alldowntime-content').html(showInstanceAllHtml)
+  const showDurationAllHtml = showDurationAllTemplate({ downtime_instances: data.downtime_instances })
+  $('.duration-totals').html(showDurationAllHtml)
 }
 
 const getAllDowntimeFailure = function (error) {
-  $('#getall-message').text('Error Retrieving Instance')
+  $('#getall-message').text('Error Retrieving Instances')
   $('#getall-message').css('background-color', '#d81717')
   console.log(error)
 }

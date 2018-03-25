@@ -1,0 +1,12 @@
+{{#each downtime_instances as |downtime_instance|}}
+
+{{#if downtime_instance.duration}}
+  for ()
+{{/if}}
+
+{{/each}}
+
+<h3>Total Downtime:</h3>
+<p>
+  {{downtime_instance.duration}}
+</p>
