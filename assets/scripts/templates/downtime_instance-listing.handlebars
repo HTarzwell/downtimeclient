@@ -31,4 +31,11 @@
       No activity recorded.  We assume you were fighting aliens.
     {{/if}}
   </p>
+  <p>
+    {{#if downtime_instance.duration}}
+      Duration (Minutes): {{downtime_instance.duration}}
+    {{else}}
+      No duration recorded.  You should update this.
+    {{/if}}
+  </p>
 </div>

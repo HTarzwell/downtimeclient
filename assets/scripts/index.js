@@ -18,8 +18,14 @@ $(() => {
   authEvents.addHandlers()
   downTimeEvents.addHandlers()
   // $('#after-signinauth').hide()
-  $('.other-input').hide()
+  $('.value-text').hide()
   $('select').change(function () {
-    $('.other-input').show()
+    $('.value-text').html('<input type="text" class="form-control other-input" name="downtime_instance[activity]" placeholder="Other">')
+    $('.other-input').val(this.value)
+    if (this.value === 'Other (Enter Your Downtime Here)') {
+      $('.value-text').show()
+    } else {
+      $('.value-text').hide()
+    }
   })
 })
