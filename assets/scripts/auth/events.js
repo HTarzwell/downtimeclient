@@ -9,8 +9,8 @@ const onSignUp = function (event) {
   const data = getFormFields(this)
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .then($('#user-signup input[type="email"]').val(''))
-    .then($('#user-signup input[type="password"]').val(''))
+    .then(() => { ($('#user-signup input[type="email"]').val('')) })
+    .then(() => { ($('#user-signup input[type="password"]').val('')) })
     .catch(ui.signUpFailure)
 }
 
@@ -31,7 +31,7 @@ const onChangePassword = function (event) {
   const data = getFormFields(this)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
-    .then($('#user-changepwd input[type="password"]').val(''))
+    .then(() => { ($('#user-changepwd input[type="password"]').val('')) })
     .catch(ui.changePasswordFailure)
 }
 
@@ -39,8 +39,8 @@ const onSignOut = function (event) {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
-    .then($('#before-signinauth').show())
-    .then($('#after-signinauth').hide())
+    .then(() => { ($('#before-signinauth').show()) })
+    .then(() => { ($('#after-signinauth').hide()) })
     .catch(ui.signOutFailure)
 }
 
