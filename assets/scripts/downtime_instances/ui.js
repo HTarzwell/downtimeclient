@@ -8,6 +8,7 @@ const createDowntimeSuccess = function (data) {
   $('#create-message').text('Created New Downtime!')
   $('#create-message').css('background-color', '#60a9cf')
   store.downtime_instance = data.downtime_instance
+  console.log('data downtime_instance is ', data.downtime_instance)
 }
 
 const createDowntimeFailure = function (error) {

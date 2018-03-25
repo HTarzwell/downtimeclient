@@ -97,7 +97,17 @@
               <label>What Time Were You Away From Your Devices?</label>
               <input type="datetime-local" class="form-control" name="downtime_instance[time]" placeholder="YYYY-MM-DD hh:mm:ss" required>
               <label>What Were You Doing?</label>
-              <input type="text" class="form-control" name="downtime_instance[activity]" placeholder="Activity (Minutes)" required>
+              <select class="form-control" name="downtime_instance[activity]" title="Choose An Activity...">
+                <option>Resting/Sleeping</option>
+                <option>Family Time</option>
+                <option>Pet Time</option>
+                <option>With Friends</option>
+                <option>Physical Activity</option>
+                <option>Other</option>
+              </select>
+              <input type="text" class="form-control other-input" name="downtime_instance[activity]" placeholder="Other">
+              <label>How Many Minutes Of Downtime?</label>
+              <input type="text" class="form-control" name="downtime_instance[duration]" placeholder="ex: 45" required>
               <label>Log Downtime</label>
               <input type="submit" class="form-control" value="Log My Downtime">
           </fieldset>
@@ -144,7 +154,17 @@
               <label>Update Date-Time</label>
               <input type="datetime-local" class="form-control" name="downtime_instance[time]" placeholder="YYYY-MM-DD hh:mm:ss" required>
               <label>Update Activity</label>
-              <input type="text" class="form-control" name="downtime_instance[activity]" placeholder="Activity" required>
+              <select class="form-control" name="downtime_instance[activity]">
+                <option>Resting/Sleeping</option>
+                <option>Family Time</option>
+                <option>Pet Time</option>
+                <option>With Friends</option>
+                <option>Physical Activity</option>
+                <option class="other">Other</option>
+              </select>
+              <input type="text" class="form-control other-input" name="downtime_instance[activity]" placeholder="Other">
+              <label>Update Minutes of Downtime</label>
+              <input type="text" class="form-control" name="downtime_instance[duration]" placeholder="ex: 45" required>
               <input type="submit" class="form-control" value="Update My Downtime">
           </fieldset>
           </div>
