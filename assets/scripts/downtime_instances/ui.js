@@ -8,7 +8,10 @@ const createDowntimeSuccess = function (data) {
   $('#create-message').text('Created New Downtime!')
   $('#create-message').css('background-color', '#60a9cf')
   store.downtime_instance = data.downtime_instance
-  console.log('data downtime_instance is ', data.downtime_instance)
+  $('.downtime-content').empty()
+  $('.alldowntime-content').empty()
+  $('#duration-totals').empty()
+  totalDuration = 0
 }
 
 const createDowntimeFailure = function (error) {
@@ -37,12 +40,11 @@ const getAllDowntimeSuccess = function (data) {
   $('#getall-message').text('All Downtime Instances Received')
   $('#getall-message').css('background-color', '#60a9cf')
   const showInstanceAllHtml = showInstanceAllTemplate({ downtime_instances: data.downtime_instances })
-  console.log('Data downtime instance duration 16 in UI is ', data.downtime_instances[16].duration)
   data.downtime_instances.forEach(function (instance) {
     if (instance.duration !== null) {
       totalDuration += instance.duration
     }
-    console.log(totalDuration)
+    return totalDuration
   })
   $('.alldowntime-content').html(showInstanceAllHtml)
   $('.duration-totals').show()
@@ -60,6 +62,8 @@ const updateDowntimeSuccess = function (data) {
   $('#update-message').css('background-color', '#60a9cf')
   $('.downtime-content').empty()
   $('.alldowntime-content').empty()
+  $('#duration-totals').empty()
+  totalDuration = 0
 }
 
 const updateDowntimeFailure = function (error) {
@@ -73,6 +77,8 @@ const deleteDowntimeSuccess = function () {
   $('#delete-message').css('background-color', '#60a9cf')
   $('.downtime-content').empty()
   $('.alldowntime-content').empty()
+  $('#duration-totals').empty()
+  totalDuration = 0
 }
 
 const deleteDowntimeFailure = function (error) {
