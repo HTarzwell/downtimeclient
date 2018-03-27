@@ -31,21 +31,22 @@ const getMyDowntimeFailure = function (error) {
   console.log(error)
 }
 
+let totalDuration = 0
+
 const getAllDowntimeSuccess = function (data) {
   $('#getall-message').text('All Downtime Instances Received')
   $('#getall-message').css('background-color', '#60a9cf')
   const showInstanceAllHtml = showInstanceAllTemplate({ downtime_instances: data.downtime_instances })
-  console.log('Data downtime instance duration 17 in UI is ', data.downtime_instances[17].duration)
-  $('.alldowntime-content').html(showInstanceAllHtml)
-  $('.duration-totals').html(function () {
-    let total = 0
-    for (let i = 0; i <= data.downtime_instances.length; i++) {
-      if (data.downtime_instance[i].duration !== null) {
-        total += data.downtime_instance[i].duration
-      }
+  console.log('Data downtime instance duration 16 in UI is ', data.downtime_instances[16].duration)
+  data.downtime_instances.forEach(function (instance) {
+    if (instance.duration !== null) {
+      totalDuration += instance.duration
     }
-    return total
+    console.log(totalDuration)
   })
+  $('.alldowntime-content').html(showInstanceAllHtml)
+  $('.duration-totals').show()
+  $('#duration-totals').html(totalDuration)
 }
 
 const getAllDowntimeFailure = function (error) {
