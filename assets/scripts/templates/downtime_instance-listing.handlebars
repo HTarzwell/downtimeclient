@@ -11,14 +11,14 @@
 <div data-id="{{downtime_instance.id}}">
   <h3>Downtime Instance #{{downtime_instance.id}}</h3>
   <p>
-    {{#if downtime_instance.activity}}
+    {{#if downtime_instance.date}}
       Date: {{downtime_instance.date}}
     {{else}}
       No date recorded. You should update this.
     {{/if}}
   </p>
   <p>
-    {{#if downtime_instance.activity}}
+    {{#if downtime_instance.time}}
       Time: {{downtime_instance.time}}
     {{else}}
       No time recorded. You should update this.
@@ -29,6 +29,13 @@
       Activity: {{downtime_instance.activity}}
     {{else}}
       No activity recorded.  We assume you were fighting aliens.
+    {{/if}}
+  </p>
+  <p>
+    {{#if downtime_instance.duration}}
+      Duration (Minutes): {{downtime_instance.duration}}
+    {{else}}
+      No duration recorded.  You should update this.
     {{/if}}
   </p>
 </div>

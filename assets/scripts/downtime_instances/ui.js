@@ -8,6 +8,10 @@ const createDowntimeSuccess = function (data) {
   $('#create-message').text('Created New Downtime!')
   $('#create-message').css('background-color', '#60a9cf')
   store.downtime_instance = data.downtime_instance
+  $('.downtime-content').empty()
+  $('.alldowntime-content').empty()
+  $('#duration-totals').empty()
+  totalDuration = 0
 }
 
 const createDowntimeFailure = function (error) {
@@ -30,15 +34,25 @@ const getMyDowntimeFailure = function (error) {
   console.log(error)
 }
 
+let totalDuration = 0
+
 const getAllDowntimeSuccess = function (data) {
   $('#getall-message').text('All Downtime Instances Received')
   $('#getall-message').css('background-color', '#60a9cf')
   const showInstanceAllHtml = showInstanceAllTemplate({ downtime_instances: data.downtime_instances })
+  data.downtime_instances.forEach(function (instance) {
+    if (instance.duration !== null) {
+      totalDuration += instance.duration
+    }
+    return totalDuration
+  })
   $('.alldowntime-content').html(showInstanceAllHtml)
+  $('.duration-totals').show()
+  $('#duration-totals').html(totalDuration)
 }
 
 const getAllDowntimeFailure = function (error) {
-  $('#getall-message').text('Error Retrieving Instance')
+  $('#getall-message').text('Error Retrieving Instances')
   $('#getall-message').css('background-color', '#d81717')
   console.log(error)
 }
@@ -48,6 +62,8 @@ const updateDowntimeSuccess = function (data) {
   $('#update-message').css('background-color', '#60a9cf')
   $('.downtime-content').empty()
   $('.alldowntime-content').empty()
+  $('#duration-totals').empty()
+  totalDuration = 0
 }
 
 const updateDowntimeFailure = function (error) {
@@ -61,6 +77,8 @@ const deleteDowntimeSuccess = function () {
   $('#delete-message').css('background-color', '#60a9cf')
   $('.downtime-content').empty()
   $('.alldowntime-content').empty()
+  $('#duration-totals').empty()
+  totalDuration = 0
 }
 
 const deleteDowntimeFailure = function (error) {
